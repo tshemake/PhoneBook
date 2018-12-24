@@ -37,12 +37,14 @@ namespace PhoneBook.API.Models
         /// Внутренний телефон
         /// </summary>
         [DisplayName("Внутренний телефон")]
+        [Validators.Phone]
         public string PhoneInternal { get; set; }
 
         /// <summary>
         /// Внешний телефон
         /// </summary>
         [DisplayName("Внешний телефон")]
+        [Validators.Phone]
         public string PhoneExternal { get; set; }
 
         /// <summary>
