@@ -49,6 +49,7 @@ namespace PhoneBook.API.Models
         /// Электронная почта
         /// </summary>
         [DisplayName("Электронная почта")]
+        [EmailAddress]
         public string Email { get; set; }
 
         /// <summary>
