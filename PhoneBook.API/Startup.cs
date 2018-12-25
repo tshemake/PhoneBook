@@ -10,6 +10,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using PhoneBook.API.Models;
 using Swashbuckle.AspNetCore.Swagger;
 
 namespace PhoneBook.API
@@ -26,6 +27,9 @@ namespace PhoneBook.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddTransient<ApplicationDbContextFactory>();
+            services.AddTransient(provider => provider.GetService<ApplicationDbContextFactory>().CreateApplicationDbContext());
+
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
             services.AddApiVersioning(
