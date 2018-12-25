@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -25,12 +26,16 @@ namespace PhoneBook.API.Models
         /// Организация
         /// </summary>
         [DisplayName("Организация")]
+        [ForeignKey("OrganizationId")]
         public Organization Organization { get; set; }
+        public long OrganizationId { get; set; }
 
         /// <summary>
         /// Подразделение
         /// </summary>
         [DisplayName("Подразделение")]
+        [ForeignKey("SubdivisionId")]
         public Subdivision Subdivision { get; set; }
+        public long? SubdivisionId { get; set; }
     }
 }

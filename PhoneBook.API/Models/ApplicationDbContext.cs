@@ -12,6 +12,15 @@ namespace PhoneBook.API.Models
             DbContextOptions<ApplicationDbContext> options)
             : base(options) { }
 
+        public DbSet<Organization> Organizations { get; set; }
+        public DbSet<Building> Buildings { get; set; }
+        public DbSet<Floor> Floors { get; set; }
+        public DbSet<Room> Rooms { get; set; }
+        public DbSet<Subdivision> Subdivisions { get; set; }
+        public DbSet<Department> Departments { get; set; }
+        public DbSet<Position> Positions { get; set; }
+        public DbSet<Contact> Contacts { get; set; }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
         }

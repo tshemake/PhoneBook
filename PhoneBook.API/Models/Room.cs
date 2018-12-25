@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -25,6 +26,8 @@ namespace PhoneBook.API.Models
         /// Этаж
         /// </summary>
         [DisplayName("Этаж")]
+        [ForeignKey("FloorId")]
         public Floor Floor { get; set; }
+        public long FloorId { get; set; }
     }
 }

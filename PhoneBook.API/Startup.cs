@@ -28,7 +28,7 @@ namespace PhoneBook.API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddTransient<ApplicationDbContextFactory>();
-            services.AddTransient(provider => provider.GetService<ApplicationDbContextFactory>().CreateApplicationDbContext());
+            services.AddTransient(provider => provider.GetService<ApplicationDbContextFactory>().CreateDbContext());
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
